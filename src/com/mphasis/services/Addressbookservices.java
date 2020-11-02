@@ -16,7 +16,7 @@ public class Addressbookservices {
     public static void WriteToACsv(Addressbook addressbook,String addressbookname){
         final String COMMA_DELIMITER = ",";
         final String LINE_SEPARATOR = "\n";
-        String PATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+addressbookname;
+        String PATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+addressbookname;
         final String HEADER = "Firstname,LastName,Address,City,Pincode,Number";
         List personList=addressbook.getAddressbook();
         FileWriter fileWriter=null;
@@ -63,7 +63,7 @@ public class Addressbookservices {
      * @return:personlist:list of person objects*/
     public static List readFromACsv(String addressbookname){
         final String COMMA_DELIMITER = ",";
-        String PATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+addressbookname;
+        String PATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+addressbookname;
         List<Person> personList=new ArrayList<Person>();
         BufferedReader br =null;
         try{
@@ -102,7 +102,7 @@ public class Addressbookservices {
      * @return:addressbook:addressbook object*/
     public Addressbook createAddressbook(String addressbookname){
         try{
-            String PATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+addressbookname;
+            String PATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+addressbookname;
             File file=new File(PATH);
             if(file.createNewFile()){
                 System.out.println("welcome to addressbook "+addressbookname);
@@ -122,7 +122,7 @@ public class Addressbookservices {
      * @param:addressbookname:name of the addressbook
      * @return:personlist:list of the persons*/
     public List  Openanaddressbook(String addressbookname){
-        String PATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+addressbookname;
+        String PATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+addressbookname;
         File file=new File(PATH);
         if(file.exists()){
             return Addressbookservices.readFromACsv(addressbookname);
@@ -148,12 +148,12 @@ public class Addressbookservices {
      * @param:addressbook:object of addressbook*/
     public void saveAs(String addressbookname,Addressbook addressbook){
         Addressbookservices.WriteToACsv(addressbook,addressbookname);
-        String OldPATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+addressbookname;
+        String OldPATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+addressbookname;
         File oldfile=new File(OldPATH);
         System.out.println("enter the name of addressbook want to save as:");
         Scanner scanner=new Scanner(System.in);
         String newaddressbookname=scanner.nextLine()+".csv";
-        String NewPATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+newaddressbookname;
+        String NewPATH="C:\\Users\\madhu\\IdeaProjects\\Addressbook1\\src\\com\\mphasis\\data"+"\\"+newaddressbookname;
         File newfile=new File(NewPATH);
         oldfile.renameTo(newfile);
     }

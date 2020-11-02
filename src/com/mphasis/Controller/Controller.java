@@ -150,6 +150,8 @@ public class Controller {
                 case 3:
                     System.out.println("addressbook closed sucessfully");
                     Main.mainmenu();
+
+                    
             }
         }
 
