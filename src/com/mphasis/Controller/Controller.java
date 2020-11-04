@@ -1,4 +1,4 @@
-package com.mphasis.controller;
+package com.mphasis.Controller;
 
 import com.mphasis.main.Main;
 import com.mphasis.model.Addressbook;
@@ -151,7 +151,7 @@ public class Controller {
                     System.out.println("addressbook closed sucessfully");
                     Main.mainmenu();
 
-                    
+
             }
         }
 
@@ -208,8 +208,12 @@ public class Controller {
     public static Addressbook helper(Addressbook addressbook,String addressbookname,PersonServices personServices
             ,Addressbookservices addressbookservices){
         System.out.println("choose a case");
-        System.out.println("Case1:Add person , Case2:Edit a person , Case3:Delete a person" +
-                "Case4 :Sort a addressbook , Case5:Print a person , Case6:Back to main menu");
+        System.out.println("Case1:Add person " +
+                ", Case2:Edit a person " +
+                ", Case3:Delete a person" +
+                "Case4 :Sort a addressbook " +
+                ", Case5:Print a person ," +
+                " Case6:Back to main menu");
         Scanner scanner=new Scanner(System.in);
         int input=scanner.nextInt();
         scanner.nextLine();
